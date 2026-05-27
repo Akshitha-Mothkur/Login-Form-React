@@ -7,15 +7,32 @@ function Login(){
     const h4ref= useRef()
     function handler(e){
         e.preventDefault()
-        var data={
+        const nameIsValid = /^[a-zA-Z0-9]+$/.test(name)
+       
+        if (!nameIsValid) {
+            alert("Name can only contain letters and numbers")
+            h4ref.current.innerText = "Login Failed"
+            h4ref.current.style.display = "block"
+            h4ref.current.style.color="red"
+            return
+        }
+
+        if (pwd.length<8) {
+            alert("Password must be at least 8 characters")
+            h4ref.current.innerText = "Login Failed"
+            h4ref.current.style.display = "block"
+             h4ref.current.style.color="red"
+            return
+        }
+
+        const data = {
             username: name,
             password: pwd
         }
-        //console.log(data.username)
-        //alert(data.username)
-        
-        h4ref.current.innerText="Login successful "
-        h4ref.current.style.display="block"
+
+        h4ref.current.innerText = "Login successful"
+        h4ref.current.style.display = "block"
+        h4ref.current.style.color="green"
     }
     function handleReset(){
         setName("")
