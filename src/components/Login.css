@@ -1,0 +1,45 @@
+
+
+.loginform{
+    display: inline-flex;
+    flex-direction: column;
+    border: 3px solid #4B0082;
+    margin:40px auto;
+    padding: 15px;
+    border-radius: 19px;
+    transition: 0.08s ease;
+
+    &:hover{
+        transform: scale(1.01);
+        border-color: #8A2BE2;
+    }
+}
+
+.login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.login button{
+    width:100px;
+    height: 30px;
+    margin-left:32px;
+    margin-top: 15px;
+    background-color: #9370DB;
+    border: none;
+    border-radius: 10px;
+
+    &:hover{
+        background-color: #8A2BE2;
+    }
+    
+}
+
+#success{
+    display: none;
+    margin-top:20px;
+    border: 2px solid rgb(2, 160, 2);
+    border-radius: 12px;
+    padding:15px;
+    color:white;
+}
